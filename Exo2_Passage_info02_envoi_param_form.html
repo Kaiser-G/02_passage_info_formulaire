@@ -51,39 +51,27 @@
 
     <h1>Exercice 2</h1>
 
-    <p>Ecrire une page qui recevra des paramètres GET dans l’Url. Cette page devra afficher les valeurs des paramètres
-        LOGIN et PASSWORD.
-        Exemple : si l’URL est http://.......?LOGIN=Licois&PASSWORD=Johanne
-        Version 1 :
-        Le programme devra afficher avec ALERT dans 1 premier temps « Licois » puis « Johanne »
-        Version 2 :
-        Dans le Html de la page on aura
-        Nous avons reçu :
-        LOGIN : ………
-        PASSWORD : ………
-        Les valeurs des paramètres devront être affichées à la place des zones en jaune.
-        Rappel : Pour modifier le contenu d’une page, penser à utiliser innerHTML
+    <p>Ecrire une page qui affiche un formulaire permettant de saisir un LOGIN et un MOT DE PASSE.<br>
+        Lorsque l’utilisateur clique sur le bouton envoyer cela envoie les informations vers la page<br>
+        Passage_info01_recup_param.html (cf. exercice 1) qui les affichent.<br>
+        Remarque : il ne faudra pas coder une ligne de code Javascript dans cette page.
     </p><br>
 
     <div class="trait"></div>
 
     <!--Début de l'exo-->
-
-    <form action="http://www.afpa.fr" method="get">
+    <!--action permet d'envoyer les infos a cette "adresse" page-->
+    <form action="Exo1_Passage_info01_recup_param.html" method="get">
         <div class="row g-0">
-            <h2 id="asaisir" class="col-sm-6 col-md-8">Nom :</h2>
-            <input id="saisi" class="col col-md-4" type="text">
-            <input id="btn" class="col col-md-1 btn btn-primary" type="submit" value="Envoyer">
+            <h2 id="login" class="col">LOGIN :</h2>
+            <input id="log" class="col col-md-4" type="text" name="LOGIN">
 
+            <h2 id="password" class="col-sm-6 col-md-8">PASSWORD :</h2>
+            <input id="pass" class="col col-md-4" type="password" name="PASSWORD">
+            <input id="btn" class="col col-md-1 btn btn-primary" type="submit" value="Envoyer">
         </div>
 
     </form>
-
-
-    <h3 id="message"></h3>
-
-
-
 
     <!--Début du javascript-->
 
