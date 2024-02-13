@@ -51,23 +51,19 @@
 
     <h1>Exercice 4</h1>
 
-    <p>Ecrire une page qui recevra des paramètres GET dans l’Url. Cette page devra afficher les valeurs des paramètres
-        LOGIN et PASSWORD.
-        Exemple : si l’URL est http://.......?LOGIN=Licois&PASSWORD=Johanne
-        Version 1 :
-        Le programme devra afficher avec ALERT dans 1 premier temps « Licois » puis « Johanne »
-        Version 2 :
-        Dans le Html de la page on aura
-        Nous avons reçu :
-        LOGIN : ………
-        PASSWORD : ………
-        Les valeurs des paramètres devront être affichées à la place des zones en jaune.
-        Rappel : Pour modifier le contenu d’une page, penser à utiliser innerHTML
+    <p>Ecrire une page qui affiche un lien hypertext qui contiendra une redirection vers la page<br>
+        Passage_info01_recup_param.html (cf. exercice 1) qui les affichent un LOGIN et un MOT DE PASSE.<br><br>
+        Remarque : le LOGIN et PASSWORD seront écrits dès le départ dans le coder HTML avec les valeurs souhaitées.
     </p><br>
 
     <div class="trait"></div>
 
     <!--Début de l'exo-->
+
+    <a id="envoi" href="Exo1_Passage_info01_recup_param.html">Login et mot de passe</a>
+
+    <!--Correction sans Javascript-->
+    <!--<a href="Passage_info01_recup_param_V2.html?LOGIN=Licois&PASSWORD=Johanne">Envoyer LOGIN et Mot de Passe</a>-->
 
 
 
@@ -85,6 +81,14 @@
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
+            let go = document.getElementById("envoi");
+
+            go.addEventListener("click", () => {
+                window.location.search = "LOGIN=toto&PASSEWORD=123";
+
+            }
+
+                , false);
 
 
 
