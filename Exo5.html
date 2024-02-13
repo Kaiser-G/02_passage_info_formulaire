@@ -49,7 +49,7 @@
 
     <!--fin barre de nav-->
 
-    <h1>Exercice 3</h1>
+    <h1>Exercice 5</h1>
 
     <p>Ecrire une page qui affiche un formulaire permettant de saisir un LOGIN et un MOT DE PASSE.<br>
         Lorsque l’utilisateur clique sur le bouton envoyer cela envoie les informations vers la page<br>
@@ -109,14 +109,24 @@
                     let url_redirection;
                     let login = document.getElementById("log").value;
                     let pass = document.getElementById("pass").value;
+                    // let queryString;
+                    // let searchParams;
 
-
-                    // Afficher les valeurs récupérées 
+                    // Afficher les valeurs 
                     alert("Login: " + login + "\nPassword: " + pass);
+
+                    // queryString = window.location.search;
+
+                    // searchParams = new URLSearchParams(queryString);
+                    // alert(searchParams);
+                    // console.log(searchParams.toString());
+
+
 
                     //envoi les infos sur la page 01
                     url_redirection = "Exo1_Passage_info01_recup_param.html?LOGIN=" + login + "&PASSWORD=" + pass;
-                    // Construction de l'URL avec les paramètres de requête
+                    //Construction de l'URL avec les paramètres de requête
+                    // url_redirection = "Exo1_Passage_info01_recup_param.html?LOGIN=" + encodeURIComponent(login) + "&PASSWORD=" + encodeURIComponent(pass);
                     alert("URL de redirection: " + url_redirection)
                     window.location.href = url_redirection;
                 },
