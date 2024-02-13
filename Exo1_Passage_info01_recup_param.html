@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/lezard.png" type="image/x-icon">
+    <title>Exo01</title>
+</head>
+
+<body>
+    <!--barre de nav-->
+    <header>
+        <nav class="navbar fixed_top navbar-expand-lg navbar-light bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Accueil</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo1_Passage_info01_recup_param.html">Exercice 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo2_Passage_info02_envoi_param_form.html">Exercice 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo3_Passage_info03_envoi_param_btn.html">Exercice 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo4_Passage_info04_envoi_param_aHref.html  ">Exercice 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo5_verif_form05_date.html">Exercice 5</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--fin barre de nav-->
+
+    <h1>Exercice 1</h1>
+
+    <p>Ecrire une page qui recevra des paramètres GET dans l’Url. Cette page devra afficher les valeurs des paramètres
+        LOGIN et PASSWORD.<br>
+        Exemple : si l’URL est http://.......?LOGIN=Licois&PASSWORD=Johanne<br>
+        Version 1 :<br>
+        Le programme devra afficher avec ALERT dans 1 premier temps « Licois » puis « Johanne »<br>
+        Version 2 :<br>
+        Dans le Html de la page on aura<br><br>
+        Nous avons reçu :<br>
+        LOGIN : ………<br>
+        PASSWORD : ………<br><br>
+        Les valeurs des paramètres devront être affichées à la place des zones en .....<br>
+        Rappel : Pour modifier le contenu d’une page, penser à utiliser innerHTML.<br>
+    </p><br>
+
+    <div class="trait"></div>
+
+    <!--Début de l'exo-->
+
+    <form action="#" method="get">
+        <div class="row g-0">
+            <h2 class="col-sm-6 col1-md-8">LOGIN :</h2>
+            <h3 id="login" class="col-sm-6 col1-md-8">............</h3>
+            <h2 class="col-sm-6 col-md-8">PASSWORD :</h2>
+            <h3 id="password" class="col-sm-6 col-md-8">............</h3>
+        </div>
+    </form>
+
+
+    <!--Début du javascript-->
+
+    <script>
+        "use strict"; // Oblige la déclaration des variables
+        // Zone de déclaration des PROCEDURES ET FONCTIONS
+
+        // Zone de déclaration des variables GLOBALES 
+        // (celles du programme PRINCIPAL)
+        let queryString;
+        let searchParams;
+
+        // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
+        window.addEventListener('load', (event) => {
+            // Le code de PROGRAMME PRINCIPAL
+            //recupère la zone après le ? dans l'URL de la page
+            let login = document.getElementById("login");
+            let password = document.getElementById("password");
+            queryString = window.location.search;
+
+            searchParams = new URLSearchParams(queryString);
+            alert(searchParams);
+            console.log(searchParams.toString());
+
+            // for (let p of searchParams) {
+            //     login.innerHTML = p[1];
+            //     password.innerHTML = p[1];
+            // }
+
+            if (searchParams.get("LOGIN") == null) {
+                alert("Le login ne fait pas partie des paramètres");
+            } else {
+                alert("Login reçu : " + searchParams.get("LOGIN"));
+                login.innerHTML = searchParams.get("LOGIN");
+            }
+
+            if (searchParams.get("PASSWORD") == null) {
+                alert("Le password ne fait pas partie des paramètres");
+            } else {
+                alert("Le password reçu : " + searchParams.get("PASSWORD"));
+                password.innerHTML = searchParams.get("PASSWORD");
+            }
+
+
+
+
+        });
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
