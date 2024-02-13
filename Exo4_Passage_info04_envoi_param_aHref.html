@@ -60,7 +60,7 @@
 
     <!--Début de l'exo-->
 
-    <a id="envoi" href="Exo1_Passage_info01_recup_param.html">Login et mot de passe</a>
+    <a id="envoi" href="Exo1_Passage_info01_recup_param.html?LOGIN=Licois&PASSWORD=Johanne">Login et mot de passe</a>
 
     <!--Correction sans Javascript-->
     <!--<a href="Passage_info01_recup_param_V2.html?LOGIN=Licois&PASSWORD=Johanne">Envoyer LOGIN et Mot de Passe</a>-->
@@ -81,14 +81,14 @@
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
-            let go = document.getElementById("envoi");
+            // let go = document.getElementById("envoi");
 
-            go.addEventListener("click", () => {
-                window.location.search = "LOGIN=toto&PASSEWORD=123";
+            // go.addEventListener("click", () => {
+            //     window.location.search = "LOGIN=toto&PASSEWORD=123";
 
-            }
+            // }
 
-                , false);
+            //     , false);
 
 
 
